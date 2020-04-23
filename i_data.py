@@ -9,7 +9,8 @@ Features:
 - selection prefixes for keys separately for each caller module
 - load value with conversion from string according type of default value
 - value change history
-- available some standart dict methods: keys(), update(), del ...
+- available some standart dict methods:
+    keys(), update(), get(), setdefault(), del ...
 '''
 import inspect
 
@@ -178,6 +179,16 @@ class Data:
             return self.items.keys()
         else:
             return [key for key in self.items.keys() if key.startswith(self.prefix)]
+
+
+    def get(self, key, default=None):
+        return self.items.get(key, default)
+
+
+    def setdefault(self, key, default):
+        if key not in self.__dict__['items'].keys():
+            self.items[key] = default
+        return self.items[key]
 
 
     def __getattr__(self, name):
