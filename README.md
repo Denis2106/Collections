@@ -9,4 +9,5 @@ Features:
 - selection prefixes for keys separately for each caller module
 - load value with conversion from string according type of default value
 - value change history
-- available some standart dict methods: keys(), update(), del ...
+- available some standart dict methods: 
+    keys(), update(), get(), setdefault(), del ...
